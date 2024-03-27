@@ -225,14 +225,15 @@ Configuring monitoring for the model requires sending some data to it, which in 
 
 1. From the model metrics overview screen, click Actions.
 2. From the dropdown menu, click View model information.
+   ![](assets/2024-03-27-17-29-57.png)
 3. Copy and paste the values for Evaluation datamart ID and Subscription ID into a text file, making sure to note which value is which. You will use these two values in a Jupyter notebook in the next step.
 
-In a different browser window, navigate to the IBM Cloud API keys page for your account, signing in if necessary.
-
+In a different browser window, navigate to the IBM [Cloud API keys page](https://cloud.ibm.com/iam/apikeys) for your account, signing in if necessary.
+![](assets/2024-03-27-17-32-56.png)
 1. Click the Create button.
 2. Give your API key a name and click Create.
 3. Click the Copy icon beneath your API key to copy it to your clipboard. Paste it into a text file for later use.
-
+![](assets/2024-03-27-17-33-46.png)
 ## Send Data to the Model
 
 To send data to the model and run an evaluation, follow these steps:
@@ -240,12 +241,14 @@ To send data to the model and run an evaluation, follow these steps:
 1. Return to the project you are using for this lab. If necessary, you can find it from the project list accessed from the link: Americas | Europe | Asia Pacific.
 2. Click on the Assets tab of the project.
 3. Locate the Send data to the model notebook from the list of assets. Click on the three dots to the right of it to open the options menu.
+   ![](assets/2024-03-27-17-35-35.png)
 4. Click Edit. The watsonx Jupyter notebook editor will open.
 5. Copy and paste the values you gathered in the previous step into the first code cell, ensuring that they are contained within the quotation marks on each line.
+ ![](assets/2024-03-27-17-37-50.png)  
 6. Click the Cell item from the menu above the code cells.
 7. Click Run All to run all the code cells. They should take roughly 30 seconds to complete.
 8. If the code cells ran successfully, you should see a message below the bottom code cell indicating a successful completion. If you received an error message, double check that you used the correct values in the first code cell and run all the code cells again.
-
+![](assets/2024-03-27-17-40-54.png)
 ## Connect to the Training Data
 
 Next, we will configure the individual monitors for the model. Follow these steps:
