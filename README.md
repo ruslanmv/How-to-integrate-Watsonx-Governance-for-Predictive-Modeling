@@ -11,15 +11,38 @@ We  will create a use case for a predictive risk model in the model inventory. L
 To create a use case for the policy evaluation model, follow these steps:
 
 1. Sign in to IBM Watsonx using the appropriate link for your region.
-2. Click on the hamburger menu in the upper left to expand it.
-3. Locate the AI governance section of the menu, expanding it if necessary, and click on AI use cases.
-4. Click the New AI use case button to open the New AI use case window.
-5. Give your use case a name. If you are using a shared account, use some identifying information to mark it as belonging to you.
-6. Provide a description for the business issue the use case is attempting to solve.
-7. Use the Risk level dropdown to set the associated level of risk.
-8. Use the Inventory dropdown to select the model inventory you identified.
-9. Click on the Status dropdown on the right side of the screen and select the Development in progress status.
-10. Click Create to create the use case.
+2. We go to Resources List and we Launch Watsonx.Governance
+   ![](assets/2024-03-27-09-36-41.png)
+3. Then we click on create  a Sandbox
+   ![](assets/2024-03-27-09-55-15.png)
+   
+4. Click on the hamburger menu in the upper left to expand it.
+   ![](assets/2024-03-27-09-56-05.png)
+5. Locate the AI governance section of the menu, expanding it if necessary, and click on AI use cases.
+   ![](assets/2024-03-27-09-58-13.png)
+6. Click on the Gear icon to open the Manage menu for AI use cases.
+   ![](assets/2024-03-27-10-04-13.png)
+
+7. Click on the Inventories item from the menu on the left to see the full list of inventories.
+    ![](assets/2024-03-27-10-04-40.png)
+8. Give your inventory a name that includes some identifying
+   information such as your email address and the purpose it will be used for. In this case, your inventory will deal with auto insurance models. You may also give your inventory a description. Use the Object storage instance dropdown to select your object storage service.
+   ![](assets/2024-03-27-10-07-05.png) 
+   
+   Once the inventory has been created, you will have the opportunity to add collaborators. Click the x in the upper right to close the Set collaborators window, then click the x in the upper right to close the Manage window.
+9.  Locate the AI governance section of the menu, expanding it if necessary, and click on AI use cases.
+    ![](assets/2024-03-27-10-16-01.png)
+10. Click the New AI use case button to open the New AI use case window
+    Give your use case a name. If you are using a shared account, use some identifying information to mark it as belonging to you.
+    Provide a description for the business issue the use case is attempting to solve.
+    ![](assets/2024-03-27-10-22-36.png) ù
+    
+     Use the Risk level dropdown to set the associated level of risk.
+     Use the Inventory dropdown to select the model inventory you identified
+
+    11. Click on the Status dropdown on the right side of the screen and select the Development in progress status.
+    Click Create to create the use case.
+    ![](assets/2024-03-27-10-24-46.png)
 
 Take a moment to review the use case screen, and note the Access tab, which allows sharing of the use case with other stakeholders to allow collaboration on the model lifecycle.
 
@@ -29,26 +52,36 @@ In this section, we will create an IBM Watsonx project that will contain all the
 
 To create the project, follow these steps:
 
-1. Right-click on the link for the project file and choose the appropriate menu option for your browser to download it to your machine. Do not unzip the file.
+1. Right-click on the link for the [project file](https://github.com/CloudPak-Outcomes/Outcomes-Projects/raw/main/watsonx-governance-l3/Auto-insurance-policy-risk.zip) and choose the appropriate menu option for your browser to download it to your machine. Do not unzip the file.
 2. In a separate browser window, navigate to the IBM Watsonx projects screen using the appropriate link for your region.
-3. Click the blue New project button on the right.
+ [Americas](https://dataplatform.cloud.ibm.com/projects/?context=wx) | [Europe](https://eu-de.dataplatform.cloud.ibm.com/projects/?context=wx) | [Asia Pacific](https://jp-tok.dataplatform.cloud.ibm.com/projects/?context=wx).
+
+3. Create A New project project button on the right.
 4. Click the Local file option on the left.
+   
 5. Click the Browse button in the middle of the screen, and browse to the zipped Auto-insurance-policy-risk file you downloaded in step one.
-6. Give your project a name, ensuring that the name begins with some identifying information such as the beginning of your email address or IBM ID. For example, emartens - Auto policy risk.
+6. Give your project a name, ensuring that the name begins with some identifying information such as the beginning of your email address or IBM ID. For example, `Predictive Analytics` - Auto policy risk.
 7. Give your project an optional description, then click Create to create the project from a file.
+   ![](assets/2024-03-27-11-15-23.png)
+
+![](assets/2024-03-27-11-15-55.png)
 
 Take a moment to verify and configure the project by following these steps:
 
 1. Click the View import summary button in the Project History tile and ensure that nothing is listed in the Incomplete or Failed categories on the left side of the screen.
+   ![](assets/2024-03-27-11-16-18.png)
 2. If an asset failed to import, you will need to delete and re-import the project.
+   ![](assets/2024-03-27-11-16-56.png)
 3. Once the project has successfully imported, click the Close button.
 4. Click on the Manage tab.
+   ![](assets/2024-03-27-11-17-34.png)
 5. Click the Services & integrations item from the menu on the left.
 6. Click the blue Associate service button on the right.
+   ![](assets/2024-03-27-11-49-36.png)
 7. Locate the appropriate machine learning service for the account in the table.
 8. Check the box to the left of the service.
-9. Click the blue Associate button.
-
+9.  Click the blue Associate button.
+![](assets/2024-03-27-11-50-24.png)
 The project is now configured and ready to use.
 
 ## Track the Model
@@ -59,21 +92,26 @@ To configure model tracking, follow these steps:
 
 1. Click on the Assets tab of the project. Note that the policy_risk_training_autoai.csv file has been provided if you would like to run your own AutoAI experiment or use a different method to create the model.
 2. From the list of assets, locate and click on the AutoAI policy risk - P4 Ridge - Model entry to open the model information screen.
+   ![](assets/2024-03-27-12-04-34.png)
 3. Take a moment to review the information presented and note that it can be exported as a PDF report by clicking the Export report link. The metadata includes when the model was created, the identity of the creator, the prediction type, algorithm used, and information on the training dataset.
 4. Scroll down to the Training metrics section and note that the initial quality metrics generated by AutoAI during model creation have been captured here. Finally, note that the model's input schema is included.
 5. Scroll back up to the top of the model information screen and click the Track this model button. The Track model screen will open.
+   ![](assets/2024-03-27-13-48-46.png)
 6. Click the radio button to the left of the AI use case you created in a previous step.
 7. Click Next.
+   ![](assets/2024-03-27-13-49-29.png)
 8. When asked to define an approach, leave Default approach selected and click Next.
-9. When asked to assign a model version, leave Experimental selected. Note that you can manually assign a version number here or choose a more production-ready version number depending on the state of the model. Click Track asset to start tracking the model.
-
+   ![](assets/2024-03-27-13-50-01.png)
+9.  When asked to assign a model version, leave Experimental selected. Note that you can manually assign a version number here or choose a more production-ready version number depending on the state of the model.
+![](assets/2024-03-27-13-50-42.png)
+10.  Click Track asset to start tracking the model.
+![](assets/2024-03-27-13-51-12.png)
 Once the model tracking has been enabled, you will be returned to the model information screen. You can now view the model information in the use case. Click the View details arrow icon button, and a new tab will open in your browser showing the model use case in your model inventory.
-
+![](assets/2024-03-27-13-52-44.png)
 To view the tracked model, follow these steps:
 
 1. Click on the Lifecycle tab of the use case.
-2. Scroll down to the map of models contained in the Default approach section. Note that there are four lifecycle sections listed (Develop, Test, Validate, and Operate). The tracked model has not yet been promoted to a deployment space, so it is listed in the Develop section of the lifecycle.
-3. If you click on the model name from this screen, you will see the full model information that is also available from clicking on it from the project. The Lifecycle tab of the AI use case is useful for stakeholders and business users to get a quick overview of all the models attempting to address a particular issue, with the ability to drill down for more information as necessary, all without needing access to the project where the developers and data engineers are working.
+   ![](assets/2024-03-27-13-53-18.png)
 
 
 ### Lifecycle tab
@@ -88,36 +126,48 @@ To view the tracked model, follow these steps:
 1. Promote the model to a deployment space and deploy it. Deployment spaces are used to organize models and related assets for validation and production access. Deploying the model enables REST API access for further testing.
 2. Return to the browser tab showing the model in the project. You can do this by navigating back to your project list and clicking on the model from the Assets tab or the Open in project button in the AI use case view.
 3. Click the rocket ship icon to promote the model to a deployment space. The Promote to space screen will open.
+   ![](assets/2024-03-27-14-18-48.png)
 4. Create a new deployment space to contain the models. You can also use an existing space if it is tagged with the correct lifecycle phase.
 5. Click on the Target space dropdown and select Create a new deployment space from the list. The Create a deployment space window will open.
-6. Provide a name for the deployment space, including "testing" to indicate it is for testing purposes.
+   ![](assets/2024-03-27-14-20-31.png)
+6. Provide a name for the deployment space, including "testing" to indicate it is for testing purposes such `Policy Risk - Testing`.
+   ![](assets/2024-03-27-14-21-12.png)
+   
 7. Add a description for the space.
 8. Select Testing from the Deployment stage dropdown. This ensures that the models deployed in this space will appear in the correct phase of the lifecycle map in the AI use case and use the testing view in the metrics and evaluation screens.
-9. Make sure the Select storage service dropdown is set to the correct object storage service for the lab.
+9.  Make sure the Select storage service dropdown is set to the correct object storage service for the lab.
 10. Select the machine learning service you are using for the lab from the Select machine learning service dropdown.
 11. Click the Create button.
+    ![](assets/2024-03-27-14-22-11.png)
 12. Once the space is created, click the Close button to return to the Promote to space screen.
+    ![](assets/2024-03-27-14-22-44.png)
 13. The newly created space should appear in the Target space dropdown. Check the box next to Go to the model in the space after promoting it.
 14. Click Promote. The deployment space screen will load, with the entry for the model open.
+    ![](assets/2024-03-27-14-23-29.png)
 
 ### Create a deployment
 
 1. The model has been promoted to the space. Deployment spaces can contain different types of assets, including models and data for batch processing jobs. Spaces are fully governed, allowing administrators to provide different levels of access for stakeholders.
 2. Click the New deployment button. The Create a deployment screen will open.
+   ![](assets/2024-03-27-14-51-23.png)
 3. Make sure the Online tile is selected, as this deployment type allows REST API access.
 4. Give the deployed model a name with personally identifiable information.
+   ![](assets/2024-03-27-14-52-50.png)
 5. Click the Create button. The model deployment will take approximately a minute.
-
+![](assets/2024-03-27-14-54-05.png)
 ### View the changes in the lifecycle
 
 1. When the deployment is finished, the Status in the displayed table will change to Deployed. Click on the name of the deployment.
 2. The deployment details screen will open.
 3. Note that the API Reference tab provides details such as direct URLs to the model and code snippets in various programming languages for application developers to include the model in their apps.
+   ![](assets/2024-03-27-14-54-45.png)
 4. Click on the Deployment details tab.
+   ![](assets/2024-03-27-14-55-19.png)
 5. In the Track this model section, the model tracking carried over from the project will be shown.
 6. Scroll to the bottom of the deployment details screen. In the Interested in more details? tile, click on the arrow icon to open the model factsheet.
+   ![](assets/2024-03-27-14-55-59.png)
 7. Scroll down to the Lifecycle section of the factsheet. The model lifecycle indicator will show that the model is in the Test phase, with a badge indicating an evaluation is pending. This stage allows application developers and data science teams to test the model connection to ensure proper functionality and accessibility.
-
+![](assets/2024-03-27-14-57-19.png)
 The next step will be to validate that the model is making fair, accurate decisions.
 
 
@@ -129,24 +179,30 @@ In this section, we will evaluate the model for quality and fairness.
 
 Before evaluating the model, we need to configure the deployment space for monitoring. If you have already created a new deployment space for this lab, or if you are using a space that has not been added to the monitoring tool as a machine learning provider, follow these steps:
 
-1. Click [here](link to watsonx.governance monitoring tool's Insights dashboard) to navigate to the watsonx.governance monitoring tool's Insights dashboard.
+1. Click [here](https://aiopenscale.cloud.ibm.com/aiopenscale/insights) to navigate to the watsonx.governance monitoring tool's Insights dashboard.
 2. Verify that you are signed into the correct account by clicking the avatar icon in the upper right corner of the screen.
-3. Ensure that the correct account (such as the technical sales market account) is selected in the Account dropdown.
-4. If you are using a shared account and are being asked if you would like to run the auto-setup utility or manually configure the service, STOP. Verify once again using the previous steps that you are using the correct account. Do not attempt to configure the service or provision a new service. If the service is unavailable, please reach out to either the market account owner, TechZone help, or Eric Martens via Slack to troubleshoot the issue.
+3. Ensure that the correct account  is selected in the Account dropdown.
+4. If you are using a shared account and are being asked if you would like to run the auto-setup utility or manually configure the service, STOP. Verify once again using the previous steps that you are using the correct account. Do not attempt to configure the service or provision a new service. 
+   ![](assets/2024-03-27-15-25-53.png)
 5. Click on the Configure button on the left menu bar.
+   ![](assets/2024-03-27-15-29-42.png)
 6. From the Required section, click on Machine learning providers.
+  
 7. Click on the Add machine learning provider button.
 8. Click on the pencil icon to edit the name of the machine learning provider.
-9. Give your provider a name with personally identifiable information, and click the blue Apply button.
+9.  Give your provider a name with personally identifiable information, and click the blue Apply button.
+    ![](assets/2024-03-27-15-32-10.png)
 10. Click on the pencil icon in the Connection tile.
+    ![](assets/2024-03-27-15-32-27.png)
 11. Click on the Service provider dropdown, then click on the Watson Machine Learning (V2) option.
 12. Click on the Deployment space dropdown, then locate and click on the deployment space you created for this lab. Note that you are specifying the models in this space as Pre-production models.
 13. Click on the Save button.
+    ![](assets/2024-03-27-15-32-54.png)
 
 Your deployment space has now been identified as a machine learning provider for the monitoring service. You may now configure monitoring for the model itself.
 
 Click on the monitor icon to return to the Insights dashboard.
-
+![](assets/2024-03-27-15-34-43.png)
 ## Add the Model to the Dashboard
 
 To add the model to the dashboard for monitoring, follow these steps:
@@ -154,10 +210,14 @@ To add the model to the dashboard for monitoring, follow these steps:
 1. Click on the blue Add to dashboard button. The Select a model deployment screen will open.
 2. Click on the Machine learning providers button.
 3. From the list of providers, select the one you are using for this lab.
+   ![](assets/2024-03-27-15-35-24.png)
 4. Click Next. The monitoring tool will retrieve the list of deployed models in this space.
 5. Choose the model you are using for this lab from the list of deployed models.
 6. Click Next.
-7. The information on the Provide model information screen will be retrieved from the available model metadata. Click the View summary button, then click Finish. After a brief wait, the metrics overview screen for the model will open.
+   ![](assets/2024-03-27-15-36-11.png)
+7. The information on the Provide model information screen will be retrieved from the available model metadata. Click the View summary button, then click Finish.
+   ![](assets/2024-03-27-15-36-36.png)
+8.  After a brief wait, the metrics overview screen for the model will open.
 
 ## Gather the Necessary Information
 
