@@ -53,7 +53,7 @@ In this section, we will create an IBM Watsonx project that will contain all the
 
 To create the project, follow these steps:
 
-1. Right-click on the link for the [project file](https://github.com/CloudPak-Outcomes/Outcomes-Projects/raw/main/watsonx-governance-l3/Auto-insurance-policy-risk.zip) and choose the appropriate menu option for your browser to download it to your machine. Do not unzip the file.
+1. Right-click on the link for the [project file](https://github.com/ruslanmv/Watsonx-Governance-for-Predictive-Modeling/raw/master/data/Auto-insurance-policy-risk.zip) and choose the appropriate menu option for your browser to download it to your machine. Do not unzip the file.
 2. In a separate browser window, navigate to the IBM Watsonx projects screen using the appropriate link for your region.
  [Americas](https://dataplatform.cloud.ibm.com/projects/?context=wx) | [Europe](https://eu-de.dataplatform.cloud.ibm.com/projects/?context=wx) | [Asia Pacific](https://jp-tok.dataplatform.cloud.ibm.com/projects/?context=wx).
 
@@ -342,7 +342,7 @@ Now that the model monitors have been configured, you can run an evaluation of t
 3. Click on the Actions button to open the Actions menu.
 4. Click on Evaluate now.
    ![](assets/2024-03-29-10-02-57.png)
-5. Download import test data [policy_risk_openscale_eval.csv](https://raw.githubusercontent.com/CloudPak-Outcomes/Outcomes-Projects/main/watsonx-governance-l3/policy_risk_openscale_eval.csv) and run the evaluation.
+5. Download import test data [policy_risk_openscale_eval.csv](https://github.com/ruslanmv/Watsonx-Governance-for-Predictive-Modeling/raw/master/data/policy_risk_openscale_eval.csv) and run the evaluation.
 6. Click Upload and evaluate. Note that the evaluation can take up to several minutes to perform. If it fails for any reason, following the same steps and re-running the evaluation typically fixes the issue.
 ![](assets/2024-03-29-10-10-28.png)
 ## View the Results
