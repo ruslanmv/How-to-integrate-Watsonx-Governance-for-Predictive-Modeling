@@ -1,5 +1,6 @@
-# How to integrate Watsonx Governance for Efficient Traditional Predictive Models
 
+# How to integrate Watsonx Governance for Efficient Traditional Predictive Models
+ ![](assets/gover.jpg)
 As Generative AI and large language models (LLMs) have become the center of attention in the artificial intelligence conversation, many organizations are still working on integrating traditional predictive models into their operations. These endeavors are often hindered by increasing regulations and public scrutiny, leading to a lesser focus on predictive machine learning models compared to their generative counterparts. Despite this, there remains a significant opportunity to assist clients in addressing various use cases with predictive models.
 
 This project aims to explore a predictive model for assessing the risk associated with auto insurance policies, taking into account different factors about the policyholder. Throughout the project, we will follow the model's lifecycle from its development phase to the testing and deployment stages. Additionally, we will set up the model for monitoring and examine how the evaluations are conducted and documented using the watsonx.governance platform. This hands-on approach will provide valuable insights into the integration and management of predictive models in the context of auto insurance risk prediction and regulatory compliance.
