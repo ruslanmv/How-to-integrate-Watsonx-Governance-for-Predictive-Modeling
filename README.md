@@ -253,55 +253,84 @@ To send data to the model and run an evaluation, follow these steps:
 
 Next, we will configure the individual monitors for the model. Follow these steps:
 
-1. Return to the monitoring Insights dashboard.
+1. Return to the monitoring Insights dashboard.[https://aiopenscale.cloud.ibm.com/aiopenscale/insights](https://aiopenscale.cloud.ibm.com/aiopenscale/insights)
 2. Click on the tile for the model you configured for monitoring in a previous step.
 3. Click on the Actions button to open the Actions dropdown.
 4. Click on Configure monitors.
+   ![](assets/2024-03-29-09-37-12.png)
 5. Click the Edit icon in the Training data tile.
-6. Leave the Use manual setup option selected for Configuration method, and click Next. The Specify training data screen opens.
+   ![](assets/2024-03-29-09-37-44.png)
+6. Leave the Use manual setup option selected for Configuration method, and click Next.
+   ![](assets/2024-03-29-09-38-06.png)
+    The Specify training data screen opens.
 7. Click on the Training data option dropdown, and click Database or cloud storage.
 8. Click on the Location dropdown, and click Cloud Object Storage.
-9. Copy and paste the provided value into the Resource instance ID field.
+9.  Copy and paste the provided value into the Resource instance ID field.
 10. Copy and paste the provided value into the API key field.
 11. Click Connect.
+    ![](assets/2024-03-29-09-39-55.png)
 12. Click on the Bucket dropdown and click on the desired bucket.
 13. Click on the Data set dropdown to select the desired data set.
+    ![](assets/2024-03-29-09-41-42.png)
 14. Click Next.
 15. The monitoring tool should correctly identify the feature and label columns. Click Next.
+    ![](assets/2024-03-29-09-42-44.png)
 16. The monitoring tool also correctly identifies the prediction field. Click View summary to continue.
 17. Click Finish to save the training data setup.
-
+![](assets/2024-03-29-09-43-13.png)
 ## Configure the Fairness Monitor
 
 To configure the fairness monitor, follow these steps:
 
 1. From the list of Evaluations on the left, click on Fairness.
+   ![](assets/2024-03-29-09-43-49.png)
 2. Click on the Edit icon in the Configuration tile.
+   ![](assets/2024-03-29-09-44-36.png)
 3. Leave the Configure manually option selected and click Next.
-4. Follow the instructions to specify the favorable and unfavorable outcomes.
+   ![](assets/2024-03-29-09-45-00.png)
+4. Follow the instructions to specify the favorable , bdteween 0 and 39 and unfavorable outcomes between 40 and 100.
 5. Set the minimum sample size and click Next.
+   ![](assets/2024-03-29-09-46-55.png)
 6. Leave the selected monitored metrics set to Disparate impact and click Next.
-7. Leave the thresholds for Disparate impact set to their defaults and click Next.
-8. Select the fields to monitor for fairness and click Next.
-9. Set the monitored and reference groups and click Next.
-10. Set the alert threshold and click Save to finish configuring the fairness monitor.
+
+   ![](assets/2024-03-29-09-47-44.png)
+
+8. Set the Minimum sample size to 100 and click Next.
+9.  ![](assets/2024-03-29-09-49-05.png)
+
+    
+  
+    Use the checkboxes to deselect PRIM_DRIVER_AGE and PRIM_DRIVER_GENDER.
+    ![](assets/2024-03-29-09-54-34.png)
+
+Scroll to the bottom of the feature list, and check the box next to MINORITY. Click Next.
+      ![](assets/2024-03-29-09-49-47.png)
+
+11. Use the checkboxes to specify MINORITY as the Monitored group and NON-MINORITY as the reference group. Click Next.
+    ![](assets/2024-03-29-09-56-34.png)
+    Use the default alert threshold (80), and click Save to finish configuring the fairness monitor. It may take up to a minute for the configuration to save, at which point you will be returned to the model settings screen.
 
 ## Configure the Quality Monitor
 
 To configure the quality monitor, follow these steps:
 
 1. From the list of Evaluations on the left, click on Quality.
+   ![](assets/2024-03-29-09-58-37.png)
 2. Click the Edit icon on the Quality thresholds tile.
 3. Leave the default threshold values as they are and click Next.
-4. Set the Minimum sample size value and click Save to save the quality configuration.
-
+4. Set the Minimum sample size 100 value and click Save to save the quality configuration.
+![](assets/2024-03-29-09-59-19.png)
 ## Configure the Explainability Service
 
 To configure the explainability service, follow these steps:
 
-1. In the Explainability section, click on General settings.
+1. In the Explainability section, click on General settings
+   ![](assets/2024-03-29-10-00-15.png)
 2. In the Explanation method tile, click on the Edit icon.
-3. Choose the desired explanation method and click Save.
+   ![](assets/2024-03-29-10-00-30.png)
+3. Two different methods are available for explanations: Shapley Additive Explanations (SHAP) or Local Interpretable Model-agnostic Explanations (LIME). As described in hint that appears when you click the Information box, SHAP often provides more thorough explanations, but LIME is faster.
+
+Leave the LIME method selected and click Save.
 
 ## Run an Evaluation
 
@@ -311,47 +340,66 @@ Now that the model monitors have been configured, you can run an evaluation of t
 2. Click on the tile for the model you configured for monitoring.
 3. Click on the Actions button to open the Actions menu.
 4. Click on Evaluate now.
-5. Follow the instructions to import test data and run the evaluation.
-
+   ![](assets/2024-03-29-10-02-57.png)
+5. Download import test data [policy_risk_openscale_eval.csv](https://raw.githubusercontent.com/CloudPak-Outcomes/Outcomes-Projects/main/watsonx-governance-l3/policy_risk_openscale_eval.csv) and run the evaluation.
+6. Click Upload and evaluate. Note that the evaluation can take up to several minutes to perform. If it fails for any reason, following the same steps and re-running the evaluation typically fixes the issue.
+![](assets/2024-03-29-10-10-28.png)
 ## View the Results
 
 Once the evaluation is complete, you can view the quality and fairness results. Take a moment to review the different metrics and understand the results.
 
 Note: The results may vary each time you perform the evaluation based on the content of the random sample of the evaluation data.
 
-To view the quality results, click on the Quality tile. The quality table will display the metrics and any violations.
+
+
+To view the quality results, click on the Quality tile.
+![](assets/2024-03-29-10-12-55.png)
+ The quality table will display the metrics and any violations.
+
 
 To view the fairness results, click on the Fairness tile. The fairness graph will show the calculated fairness and any alerts for fairness issues.
-
+![](assets/2024-03-29-10-13-34.png)
 Once you have reviewed the results, you can proceed to the next steps as needed.
-
+![](assets/2024-03-29-10-14-15.png)
 ### 6. Explain a prediction
 
-AI models are not only required to meet standards for quality and fairness, but they also need to provide explanations for the decisions or predictions they make. This requirement is in line with regulations such as the Equal Credit Opportunity Act in the United States and the European Union General Data Protection Regulation. These regulations grant individuals the right to know specific reasons behind an AI decision that affects them.
+AI models are not only required to meet standards for quality and fairness, but they also need to provide explanations for the decisions or predictions they make. 
 
 To generate detailed explanations for predictive models, Watsonx.governance offers an explainability service. When configuring the explainability service, you can specify the algorithm to be used. From the table of transactions, you can click on one of the "Explain prediction" links. For more interesting results, try to find a prediction that is close to the threshold for an unfavorable outcome, which is set at 39 when configuring the fairness monitor.
 
 The explainability service will use the LIME algorithm to generate a detailed explanation, but please note that this process may take a few minutes to complete. Once the explanation is generated, you can scroll down to the graph that depicts the influence different features had on the model's outcome. In the graph, features displayed in blue indicate an increase in the final score, while features in red indicate a decrease.
 
+From the table of transactions, click one of the Explain prediction links.
+![](assets/2024-03-29-10-17-29.png)
+
+![](assets/2024-03-29-10-18-46.png)
+
 For classification models, blue features signify a positive contribution to the model's confidence in the prediction, while red features indicate a decrease in confidence. It's important to remember that your explanation may differ from the provided screenshot, as it depends on the specific contributors to the risk score assigned. You can hover your cursor over the individual columns of the graph for more information.
 
 To further explore the model's behavior, you can click on the "Inspect" tab. Here, you have the ability to alter values associated with a record and re-submit it to the model. This allows you to see how the final risk calculation changes based on different inputs. It can be particularly useful for gaining insights into the model's functioning or for policyholders seeking ways to decrease their risk assessment.
+![](assets/2024-03-29-10-20-21.png)
 
 ### 7. View the updated lifecycle
 
 After generating metrics for your model, you can now observe the updates in the model lifecycle. To do this, follow these steps:
 
-1. Sign in to IBM Watsonx using the appropriate link for your region: Americas | Europe | Asia Pacific.
+1. Sign in to IBM Watsonx using the appropriate link for your region
 2. Click on the hamburger menu located in the upper left corner to expand it.
 3. Locate the AI governance section in the menu and expand it if necessary.
 4. Click on "AI use cases" in the AI governance section.
 5. In the table of use cases, you will see an alert listed in the "Alerts" column. This alert reflects the quality alerts discovered during the previous evaluation.
-6. Click on the auto policy use case that you have been using for this section of the lab.
+   ![](assets/2024-03-29-10-26-19.png)
+   ![](assets/2024-03-29-10-27-30.png)
+6. Click on the your use case that you have been using for this section of the lab.
 7. On the use case page, click on the "Lifecycle" tab.
+   ![](assets/2024-03-29-10-23-12.png)
 8. Scroll down to the lifecycle visualization. You will notice that the model now appears in the "Validate" section of the lifecycle.
-9. Next to the name of the deployed model, you will see a red alert badge, indicating that there may be issues with the model.
+9.  Next to the name of the deployed model, you will see a red alert badge, indicating that there may be issues with the model.
 10. Click on the name of the deployed model to access its information screen.
-11. Scroll down to the "Quality" and "Fairness" sections of the model information screen. Here, you can see the evaluation metrics generated by the monitoring tool. These metrics are automatically stored on the model's factsheet, providing stakeholders such as risk managers and data scientists with access to the information they need to assess model performance. If further information is required, there is an optional link provided that will open the monitoring tool.
+11. Scroll down to the "Quality" and "Fairness" sections of the model information screen.
+![](assets/2024-03-29-10-23-55.png)
+![](assets/2024-03-29-10-24-06.png)    
+ Here, you can see the evaluation metrics generated by the monitoring tool. These metrics are automatically stored on the model's factsheet, providing stakeholders such as risk managers and data scientists with access to the information they need to assess model performance. If further information is required, there is an optional link provided that will open the monitoring tool.
 
 ## Conclusion, 
 
